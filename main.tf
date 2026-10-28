@@ -78,34 +78,3 @@ resource "aws_s3_bucket_policy" "public_read" {
   # AWS rejects a public policy while block_public_policy is still on.
   depends_on = [aws_s3_bucket_public_access_block.this]
 }
-
-# Maps the old module addresses to the root; remove after the next apply.
-moved {
-  from = module.bucket.aws_s3_bucket.this
-  to   = aws_s3_bucket.this
-}
-
-moved {
-  from = module.bucket.aws_s3_bucket_versioning.this
-  to   = aws_s3_bucket_versioning.this
-}
-
-moved {
-  from = module.bucket.aws_s3_bucket_lifecycle_configuration.this
-  to   = aws_s3_bucket_lifecycle_configuration.this
-}
-
-moved {
-  from = module.bucket.aws_s3_bucket_public_access_block.this
-  to   = aws_s3_bucket_public_access_block.this
-}
-
-moved {
-  from = module.bucket.aws_s3_bucket_website_configuration.this
-  to   = aws_s3_bucket_website_configuration.this
-}
-
-moved {
-  from = module.bucket.aws_s3_bucket_policy.public_read
-  to   = aws_s3_bucket_policy.public_read
-}
