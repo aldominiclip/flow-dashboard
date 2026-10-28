@@ -14,9 +14,6 @@ override.tf.json
 terraform.rc
 *.tfplan
 
-# Build output
-.build/
-
 # OS / editor
 .DS_Store
 .idea/

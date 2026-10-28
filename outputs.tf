@@ -1,11 +1,7 @@
 output "bucket_name" {
-  value = module.bucket.id
-}
-
-output "distribution_id" {
-  value = module.cdn.distribution_id
+  value = aws_s3_bucket.this.id
 }
 
 output "website_url" {
-  value = "https://${var.domain_name}"
+  value = "http://${aws_s3_bucket_website_configuration.this.website_endpoint}"
 }
